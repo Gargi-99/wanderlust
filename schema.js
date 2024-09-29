@@ -22,6 +22,28 @@ module.exports.listingSchema = Joi.object({
         image: Joi.object({
             url: Joi.string().uri().allow("", null),
             filename: Joi.string().allow("", null)
-        }).allow(null)
+        }).allow(null),
+        category: Joi.string().valid(
+            "Rooms", 
+            "Iconic Cities", 
+            "Mountains", 
+            "Castles", 
+            "Pools", 
+            "Camper Vans", 
+            "History Homes", 
+            "Golfing", 
+            "House Boats", 
+            "Farms", 
+            "Arctic", 
+            "Beach", 
+            "Bed & Breakfast"
+        ).required()
     }).required()
+});
+
+module.exports.reviewSchema = Joi.object({
+    review: Joi.object({
+        rating: Joi.number().required().min(1).max(5),
+        comment: Joi.string().required(),
+    }).required(),
 });

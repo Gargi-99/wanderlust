@@ -6,42 +6,61 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+
 }
 
+
+/* General Button Styles */
 .btns {
     display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
 }
 
-.add-btn {
-    text-decoration: none;
-    background-color: #fe424d !important;
-    color: #FFFFFF !important;
-    border-radius: 5px;
-    border: 1px solid #fe424d;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
+.btn {
+    padding: 10px 20px !important;
+    width: 120px !important;
+    /* Same width for both buttons */
+    height: 45px !important;
+    /* Same height for both buttons */
+    border-radius: 5px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    transition: background-color 0.3s, color 0.3s !important;
+    text-align: center !important;
+    margin-right: 0px !important;
+    /* Reduced spacing */
 }
 
-.add-btn:hover {
-    background-color: #ff6a72 !important;
-    color: #FFFFFF !important;
-    border: 1px solid #fe424d;
-}
-
-/* 
+/* Edit Button */
 .edit-btn {
-    text-decoration: none;
-    background-color: #FFFFFF !important;
-    color: #222222 !important;
-    border-radius: 5px;
-    border: 1px solid #fe424d;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
-} */
+    background-color: white !important;
+    color: #fe424d !important;
+    border: 2px solid #fe424d !important;
+
+    transform: scale(0.98) !important;
+}
+
+.edit-btn:hover {
+    background-color: #fe424d !important;
+    color: white !important;
+}
+
+.other-btn {
+    padding: 5px 10px !important;
+    border-radius: 5px !important;
+    background-color: #fe424d !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+.dlt-btn {
+    padding: 5px 10px !important;
+    border-radius: 5px !important;
+    background-color: black !important;
+    color: #fff !important;
+    border: none !important;
+}
 
 /* showpage */
 .show-img {
@@ -119,9 +138,17 @@ body {
 }
 
 /* Cards */
-.card {
+.listing-card {
     border: none !important;
     margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.listing-card:hover {
+    transform: scale(1.05);
+    /* Scale the card slightly on hover */
+    z-index: 1;
+    /* Bring the hovered card above others */
 }
 
 .card-img-top {
@@ -152,7 +179,239 @@ body {
     background-color: white;
 }
 
+
+/* SHOW PAGE */
+.description {
+    text-align: justify;
+}
+
 .show-card {
+
     padding-left: 0;
     padding-right: 0;
+    border: none !important;
+    /* Ensure no border */
+    box-shadow: none !important;
+    /* Remove any shadow that may appear as a border */
+}
+
+
+/* MAP */
+
+#map {
+    height: 400px;
+    width: 80vh;
+}
+
+
+
+
+/* FOOTER */
+.f-info-socials a i {
+    font-size: 24px;
+    /* Set the size of the icons */
+    color: #555;
+    /* Default color for all icons */
+    transition: color 0.3s ease;
+    /* Smooth color transition on hover */
+}
+
+.f-info-socials a i.fa-linkedin {
+    color: #0e76a8;
+}
+
+.f-info-socials a i.fa-github {
+    color: #181717;
+}
+
+.f-info-socials a i.fa-square-instagram {
+    color: #E1306C;
+}
+
+/* Change color on hover */
+.f-info-socials a:hover i {
+    color: #000;
+}
+
+.f-info-socials {
+    margin-top: 10px;
+}
+
+.footer-developer a {
+    color: #bd042c;
+    text-decoration: none;
+}
+
+.footer-developer a:hover {
+    text-decoration: underline;
+}
+
+.footer-brand {
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #e07796;
+    /* color: #e7c1c8; */
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+
+/* ICONS */
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.filter {
+    position: relative;
+    /* Position relative for absolute positioning of the line */
+    text-align: center;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    /* Smooth transition for opacity */
+}
+
+.filter:hover {
+    opacity: 1;
+    /* Make the filter fully opaque on hover */
+}
+
+/* Faded line effect */
+.filter::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    /* Positioning of the line below the text */
+    width: 70%;
+    /* Width of the line */
+    height: 2px;
+    /* Thickness of the line */
+    background-color: rgba(0, 0, 0, 0.3);
+    /* Faded color for the line */
+    transform: translateX(-50%);
+    /* Center the line */
+    opacity: 0;
+    /* Initially hidden */
+    transition: opacity 0.3s ease;
+    /* Smooth transition for the line */
+}
+
+.filter:hover::after {
+    opacity: 1;
+    /* Show the line on hover */
+}
+
+.filter p {
+    font-size: 0.8rem;
+}
+
+.tax-info {
+    display: none;
+}
+
+.tax-toogle {
+    border: 1px solid black;
+    border-radius: 1rem;
+    height: 3.25rem;
+    padding: 1rem;
+    margin-left: 0.3rem;
+    display: flex;
+    align-items: center;
+}
+
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+    #filters {
+        flex-direction: row;
+        /* Maintain row layout for mobile */
+        justify-content: flex-start;
+        /* Align items to the left */
+    }
+
+    .filter {
+        width: calc(50% - 1rem);
+        /* Two items per line on mobile */
+        margin-right: 1rem;
+        /* Space between items */
+        margin-top: 1rem;
+        /* Add top margin for spacing */
+    }
+
+    .filter::after {
+        width: 100%;
+        /* Full width for the line */
+    }
+
+    /* Optional: To ensure that filters fit into two lines neatly on small screens */
+    @media (max-width: 400px) {
+        .filter {
+            width: calc(100% - 1rem);
+            /* Full width for smaller screens */
+        }
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        /* Stack items vertically */
+        width: 100%;
+        background-color: white;
+        /* Solid white background */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+        /* Full width */
+    }
+
+    .logs {
+        width: 100%;
+        /* Make logs section full width */
+        text-align: center;
+        /* Center text in logs section */
+    }
+
+}
+
+/* NAV BAR */
+.search-btn {
+    background-color: #fe424d !important;
+    color: #fff !important;
+    border-radius: 25px !important;
+    padding: 0 1rem 0 1rem !important;
+    height: 2.5rem !important;
+    border: none !important;
+    transition: background-color 0.2s ease, transform 0.1s ease !important;
+}
+
+/* Hover effect */
+.search-btn:hover {
+    background-color: #fe424d !important;
+    color: #fff !important;
+    border: none !important;
+    transform: scale(0.98) !important;
+}
+
+/* Icon inside the button */
+.search-btn i {
+    display: inline !important;
+    margin-right: 0.5rem !important;
+}
+
+/* Input styling */
+.search-input {
+    border-radius: 25px !important;
+    padding: 0.5rem 3rem 0.5rem 3rem !important;
+    font-size: 1rem !important;
+    height: 2.5rem !important;
+}
+
+/* Search bar margin */
+.search-bar {
+    margin-top: 1rem !important;
 }
