@@ -238,7 +238,8 @@ body {
 }
 
 .footer-developer a {
-    color: #bd042c;
+    /* color: #bd042c; */
+    color: #e07796;
     text-decoration: none;
 }
 
@@ -250,8 +251,7 @@ body {
     font-size: 15px;
     font-weight: 600;
     text-transform: uppercase;
-    color: #e07796;
-    /* color: #e7c1c8; */
+    color: #e7c1c8;
     margin-top: 10px;
     width: 100%;
     text-align: center;
