@@ -26,18 +26,17 @@ module.exports.listingSchema = Joi.object({
         category: Joi.string().valid(
             "Rooms", 
             "Iconic Cities", 
-            "Mountains", 
+            "Clubs", 
             "Castles", 
             "Pools", 
-            "Camper Vans", 
-            "History Homes", 
             "Golfing", 
-            "House Boats", 
+            "Camper Vans", 
+            "Mountains",
             "Farms", 
             "Arctic", 
             "Beach", 
-            "Bed & Breakfast"
-        ).required()
+            "Bed & Breakfast"   
+        )
     }).required()
 });
 
