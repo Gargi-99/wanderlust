@@ -39,7 +39,7 @@ const listingSchema = new Schema({
     },
     category: {
         type: String,
-        enum: ["Rooms", "Iconic Cities", "Clubs", "Castles", "Pools", "Golfing", "Camper Vans", "Mountains","Farms", "Lunch", "Beach", "Bed & Breakfast"],
+        enum: ["Rooms", "Iconic Cities", "Clubs", "Castles", "Pools", "Golfing", "Towers", "Mountains","Farms", "Lunch", "Beach", "Bed & Breakfast"],
         // required: true Optional but recommended to ensure every listing has a category
     }
 });
